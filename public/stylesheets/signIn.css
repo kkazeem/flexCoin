@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.form-group {
+    /* padding: 10px; */
+    margin: 10px;
+}
+
+div div {
+    padding-top: 40px;
+}
+
+.email-div, .pass-div {
+    display: flex;
+    flex-direction: column;
+}
+
+#email, #password {
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 7px;
+    height: 30px;
+    width: 100%;
+}
+
+.error {
+    color: red;
+    margin-left: 20px;
+}
+
+.login {
+    color: red;
+    margin-left: 20px;
+}
+
+
+.btn {
+    background-image: linear-gradient( to right,hsl(136, 65%, 51%),hsl(192, 70%, 51%));
+    border-radius: 10px;
+    cursor: pointer;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 7 8;
+    color: white;
+    font-size: 17px;
+    margin: 5px;
+    width: 20%;
+    height: 40px;
+    
+}
+
+.logIn-div {
+    margin-left: 10px;
+}
+
+.logIn-div a {
+    text-decoration: none;
+}
+
+@media (min-width: 40rem) {
+    
+    #email, #password {
+        height: 50px;
+        width: 400px;
+    }
+
+    label {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .btn {
+        width: 30%;
+        height: 50px;
+
+    }
+}

@@ -1,0 +1,93 @@
+doctype html
+html(lang='en')
+  head
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Public+Sans">
+    title=title 
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/FlexCoin.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <link rel="stylesheet" href="/stylesheets/shared.css">
+    <link rel="stylesheet" href="/stylesheets/contact.css">
+  body   
+    main
+        header(class="main-header")
+            <div>
+                <button class="toggle-button">
+                    <span class="toggle-button__bar"></span>
+                    <span class="toggle-button__bar"></span>
+                    <span class="toggle-button__bar"></span>
+                </button>
+            </div>
+            div.main-header__brand 
+                a(href="/") 
+                | FlexCoin
+            div(id="leftModal" class="modal")
+                nav(class="main-nav" id="myModal")
+                    span(class="closeBtn") &times;
+                    ul(class="main-nav__items")
+                        li(class="main-nav__item")
+                            a(href="/") Home
+                        li(class="main-nav__item")
+                            a(href="/about") About
+                        li(class="main-nav__item")
+                            a(href="/contact") Contact
+                        li(class="main-nav__item")
+                            a(href="/blog") Blog
+                        li(class="main-nav__item")
+                            a(href="/careers") Careers 
+                nav.for-login
+                    li(class="main-nav__login main-nav__item")
+                        a(href="/logIn") Login
+                    li(class="main-nav__login main-nav__item")
+                        a(href="/signUp") Sign Up
+
+        section.section-contact
+            //- h2=title 
+            form(action="", method="post")  
+                div.email-div
+                    label(for="email") Email Address:
+                    input#email.email(type="email", name="email" placeholder="please enter you email")
+                div.message-div
+                    label(for="message") Message: 
+                    textarea#message.message(name="message", cols="30", rows="10") 
+                div.button-div
+                    button.button(type="submit") Submit
+
+        footer(class="main-footer")
+            div(class="footer--contact__links")
+                a(href="/" class="header--brand__footer")
+                    h1 FlexCoin
+                div(class="fimg")
+                    <a href="https://twitter.com/RoseSopuruchi" target="_blank"><img src="https://res.cloudinary.com/ros4eva/image/upload/v1566984742/twitter_yvunur.png" alt="Twitter" width="20" height="20"></a>
+                    img(src="/images/icon-facebook.svg" alt="facebook" style background-color="red")
+                    a(href="https://wa.me/2349052030195")
+                        img(src="/images/icon-instagram.svg" alt="instagram")
+            div(class="navigations")
+                nav(class="main--nav1")
+                    ul(class="main-footer__links")
+                        li(class="main-footer__link")
+                            a(href="#") About Us
+                        li(class="main-footer__link")
+                            a(href="/contact") Contact
+                        li(class="main-footer__link")
+                            a(href="#") Blog
+                nav
+                    ul(class="main-footer__links")
+                        li(class="main-footer__link")
+                            a(href="#") Careers
+                        li(class="main-footer__link")
+                            a(href="#") Support
+                        li(class="main-footer__link")
+                            a(href="#") Privacy Policy
+            div(class="request--links")
+                nav(class="frequest__link")
+                    a(class="request--link " href="#") Request Invite
+                    p © FlexCoin. All Rights Reserved
+
+    script(src="/javascripts/modal.js")
+    

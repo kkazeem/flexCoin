@@ -1,0 +1,67 @@
+doctype html
+
+html 
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/images/FlexCoin.png")
+        link(rel="manifest" href="/images/site.webmanifest")
+        link(rel="stylesheet", href="/stylesheets/transactions.css")
+        title=title 
+    body
+        main
+            div
+                div
+                    button(class="toggle-button")
+                        span(class="toggle-button__bar")
+                        span(class="toggle-button__bar")
+                        span(class="toggle-button__bar")
+                div(id="leftModal" class="modal")
+                    nav(class="main-nav modal-content")                    
+                    span(class="closeBtn") &times;
+                    div#profile 
+                        img(src="/images/phone.jpg", alt="")
+                        p #{user.email}
+                    ul(class="main-nav__items")
+                        li(class="main-nav__item")
+                            a(href="/") Home
+                        li(class="main-nav__item")
+                            a(href="/dashboard") Dashboard
+                        li(class="main-nav__item")
+                            a(href="/airtime") Airtime
+                        li(class="main-nav__item")
+                            a(href="/data") Data
+                        li(class="main-nav__item")
+                            a(href="/bitcoin") BitCoin
+                        li(class="main-nav__item")
+                            a(href="/bills") Bills
+                        li(class="main-nav__item")
+                            a(href="/transactions") Transaction
+                            li(class="main-nav__item")
+                                a(href="/transfer") Transfer
+                        li(class="main-nav__item")
+                            a(href="/settings") Settings
+                    div.logOut 
+                        a(href="/logOut") Log Out 
+            div.transaction-div 
+                div.right-dashboard
+                    section.section-tractions 
+                        h2 Transactions Historys
+                        div.transactions 
+                            each transDetails in transaction
+                                ul.list-transactions
+                                    li.list-transaction__item ID
+                                        p #{transDetails.transactionID} 
+                                    li.list-transaction__item AMOUNT
+                                        p #{transDetails.amount} 
+                                    li.list-transaction__item TYPE
+                                        p #{transDetails.type} 
+                                    li.list-transaction__item REF
+                                        p #{transDetails.reference} 
+                                    li.list-transaction__item DATE
+                                        p #{transDetails.date} 
+                            else
+                                h1.transactionPage Transaction list is emty.
+            script(src="/javascripts/dashboard.js") 
+        

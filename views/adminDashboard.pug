@@ -1,0 +1,102 @@
+doctype html
+
+html 
+    head
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+        <link rel="manifest" href="/images/site.webmanifest">
+        link(rel="stylesheet", href="/stylesheets/dashboard.css")
+    body
+        main
+            div
+                <div>
+                    <button class="toggle-button">
+                        <span class="toggle-button__bar"></span>
+                        <span class="toggle-button__bar"></span>
+                        <span class="toggle-button__bar"></span>
+                    </button>
+                </div>
+                div(id="leftModal" class="modal")
+                    nav(class="main-nav modal-content")                    
+                    span(class="closeBtn") &times;
+                    div#profile 
+                        img(src="/images/phone.jpg", alt="")
+                        p #{user.email}
+                    ul(class="main-nav__items")
+                        li(class="main-nav__item")
+                            a(href="/") Home
+                        li(class="main-nav__item")
+                            a(href="/admin/dashboard") Dashboard
+                        li(class="main-nav__item")
+                            a(href="/admin/airtime") Airtime
+                        li(class="main-nav__item")
+                            a(href="/admin/data") Data
+                        li(class="main-nav__item")
+                            a(href="/admin/bitcoin") BitCoin
+                        li(class="main-nav__item")
+                            a(href="/admin/bills") Bills
+                        li(class="main-nav__item")
+                            a(href="/admin/users") All Users
+                        li(class="main-nav__item")
+                            a(href="/admin/transactions") Transaction
+                            li(class="main-nav__item")
+                                a(href="/admin/transfer") Transfer
+                        li(class="main-nav__item")
+                            a(href="/admin/settings") Settings
+                    div.logOut 
+                        a(href="/admin/logOut") Log Out 
+                    //- div#profile 
+                    //-     img(src="/images/phone.jpg", alt="")
+                    //-     p User Email
+            div 
+                div.right-dashboard
+                    p.transferResponse #{messages.transferResponse}
+
+                    section.dashboard-content
+                        //- each details in userDetails
+                        //- div.up--div
+                        div.naira-balance 
+                            p Naira Balance
+                            p #{user.wallet["nairaBalance"]}
+                            a.balance(href="/fund") Fund Balance 
+                            a.balance(href="/withflutter") Fund Balance Flutter 
+                        
+                        div.account
+                            //- p #{details.email}
+                            
+                            button(type="submit") Generate Account
+                        div.btc-balance 
+                            p BTC
+                                p #{user.wallet["BTCbalance"]}
+                            a.balance(href="/fund") Fund Balance 
+                        
+                        div.eth-balance
+                            p ETH
+                                p #{user.wallet["ETHbalance"]}
+                            a.balance(href="/fund") Fund Balance 
+                            
+                    section.section-tractions 
+                        h2 Transactions Historys
+                        div.transactions  
+                        p.paymentError #{messages.paymentError}
+                        p.err #{messages.err}
+                        p.paymentSuccess #{messages.paymentSuccess}
+                        p.saveTransactionError #{messages.saveTransactionError}
+                            each transactionList in transaction
+                                ul.list-transactions
+                                    li.list-transaction__item ID
+                                        p #{transactionList._id} 
+                                    li.list-transaction__item AMOUNT
+                                        p #{transactionList.amount} 
+                                    li.list-transaction__item TYPE
+                                        p #{transactionList.type} 
+                                    li.list-transaction__item REF
+                                        p #{transactionList.reference} 
+                                    li.list-transaction__item DATE
+                                        p #{transactionList.date} 
+                            else
+                                p.transactionPage Transaction list is emty.
+            script(src="/javascripts/dashboard.js") 
+        

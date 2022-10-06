@@ -1,0 +1,152 @@
+.bg-intro__image {
+    width: 100%;
+}
+
+#key-features {
+    background-color: hsl(0, 0%, 98%);
+}
+
+.key-feature {
+    display: inline-block;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.section__description {
+    color: hsl(233, 8%, 62%);
+    font-size: 13px;
+    margin-left: 16px;
+}
+
+/* .key-feature__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+} */
+
+.key-feature__image {
+  padding: 1rem 0;
+}
+
+.key-feature__description {
+    color: hsl(233, 8%, 62%);
+    font-size: 13px;
+}
+
+.key-feature, .section__description, .section-title {
+    text-align: center;
+}
+
+#key-features, div, ul, .key-feature {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+} 
+
+.shared-features {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: auto;
+}
+
+.section-title {
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+.description {
+    padding: 8px;
+}
+
+.title__name {
+    color: hsl(233, 8%, 62%);
+    font-size: 8px;
+}
+
+.li-subtitle {
+    color: hsl(235, 16%, 57%);
+    font-size: 13px;
+}
+
+.li-features {
+    color: hsl(233, 8%, 62%);
+    font-size: 10px;
+}
+
+.description__image img {
+    width: 100%;
+    height: 200px;
+}
+
+
+/* /* @media only screen and (min-width: 40rem) and (min-height: 40rem) { */
+@media only screen and (min-width: 40rem) and (min-height: 40rem) {
+
+    .section--element {
+        display: grid;
+    }
+    
+    .section--element__images {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .element__description {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        margin-top: 35%;
+        margin-left: 25%;
+    }
+
+    .element__description .section__description {
+        color: aliceblue;
+    }
+
+    .request {
+        margin-left: unset;
+    }
+
+    
+    #key-features, div, ul, .key-feature {
+        width: unset;
+    }
+
+    #key-features {
+        margin-top: 5rem;
+        padding: 1rem;
+    }    
+
+    .key-feature {
+        margin-left: 25px;
+    }
+
+    .key-feature, .section__description, .section-title {
+        text-align: unset;
+    }
+
+    .key-feature {
+        width: 280px;
+    }
+    
+    #key-features, div, ul {
+        width: initial;
+    } 
+        
+    .bm {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+    }
+    
+    .description {
+        width: 22%;
+    }
+    
+}

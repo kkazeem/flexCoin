@@ -1,0 +1,144 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet")
+    link(rel="stylesheet" href="https://fonts.google.com/specimen/Public+Sans")
+    title=title
+    link(rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="/images/FlexCoin.png")
+    link(rel="manifest" href="/images/site.webmanifest")
+    link(rel="stylesheet" href="/stylesheets/shared.css")
+    link(rel="stylesheet" href="/stylesheets/main.css")
+  body   
+    main
+        header(class="main-header")
+            <div>
+                <button class="toggle-button">
+                    <span class="toggle-button__bar"></span>
+                    <span class="toggle-button__bar"></span>
+                    <span class="toggle-button__bar"></span>
+                </button>
+            </div>
+            div.main-header__brand 
+                a(href="/") 
+                | FlexCoin
+            div(id="leftModal" class="modal")
+                nav(class="main-nav" id="myModal")
+                    span(class="closeBtn") &times;
+                    ul(class="main-nav__items")
+                        li(class="main-nav__item")
+                            a(href="/") Home
+                        li(class="main-nav__item")
+                            a(href="/about") About
+                        li(class="main-nav__item")
+                            a(href="/contact") Contact
+                        li(class="main-nav__item")
+                            a(href="/blog") Blog
+                        li(class="main-nav__item")
+                            a(href="/careers") Careers 
+                nav.for-login
+                    li(class="main-nav__login main-nav__item")
+                        a(href="/logIn") Login
+                    li(class="main-nav__login main-nav__item")
+                        a(href="/signUp") Sign Up
+        section(class="section--element")
+            div(class="section--element__images")
+                div(class="bg-intro") 
+                    img.bg-intro__image(src="/images/first_background.jpg", alt="")
+
+            div(class="element__description")
+                <p class="section-title">Bank with us<br>digital banking</p>
+                <p class="section__description">Take your financial life online. Your FlexCoin account<br>will be a one-stop-shop for spending, saving,<br>budgeting, investing, and much more.</p>
+                a(class="request--link request" href="#") Request Invite
+
+        section(id="key-features")
+            div(class="shared-features")
+                ul
+                    p(class="section-title") Why choose FlexCoin?
+                    <p class="section__description">We leverage Open Banking to turn your bank account into your financial hub.<br>Control your finances like never before.</p>
+                    li(class="key-feature")
+                        div(class="key-feature__image")
+                            img(src="/images/icon-online.svg" alt="")
+                        p Online Banking
+                        <p class="key-feature__description">Our modern web and mobile<br>applications allow you to keep<br>track of your finances wherever you<br>are in the world.</p>
+                    li(class="key-feature")
+                        div(class="key-feature__image")
+                            img(src="/images/icon-budgeting.svg" alt="")
+                        p Simple Budgeting
+                        <p class="key-feature__description">See exactly where your money<br>goes each month. Receive<br>notifications when you’re close to<br>hitting your limits</p>
+                    li(class="key-feature")
+                        div(class="key-feature__image")
+                            img(src="/images/icon-onboarding.svg" alt="")
+                        p Fast Onboarding
+                        <p class="key-feature__description">We don’t do branches. Open your<br>account in minutes online and start<br>taking control of your finances<br>right away.</p>
+                    li(class="key-feature")
+                        div(class="key-feature__image")
+                            img(src="/images/icon-api.svg" alt="")
+                        p(Open API)
+                        <p class="key-feature__description">Manage your savings, investments,<br>pension, and much more from one<br>account. Tracking your money has<br>never been easier.</p>
+        section(id="main-features")
+            p(class="section-title") Latest Articles
+
+            div(class="shared-features")
+                ul(class="bm")
+                    li(class="description")
+                        div(class="description__image")
+                            img(src="/images/image-currency.jpg" alt="")  
+                        p(class="title__name") By Claire Robinson
+                        p(class="li-subtitle") Receive money in any<br>currency with no fees
+                        p(class="li-features") The world is getting smaller and we’re becoming more mobile. So why should you be forced to only receive money in a single …</p>
+                    li(class="description")
+                        div(class="description__image")
+                            img(src="/images/image-restaurant.jpg" alt="" )
+                        p(class="title__name") By Wilson Hutton
+                        p(class="li-subtitle") Treat yourself without<br>worrying about money
+                        p(class="li-features") Our simple budgeting feature allows you to separate out your spending and set realistic limits each month. That means you …
+                    li(class="description")
+                        div(class="description__image")
+                            img(src="/images/image-plane.jpg" alt="")
+                        p(class="title__name") By Wilson Hutton
+                        p(class="li-subtitle") Take your FlexCoin card<br>wherever you go
+                        p(class="li-features") We want you to enjoy your travels. This is why we don’t charge any fees on purchases while you’re abroad. We’ll even show you …
+                    li(class="description")
+                        div(class="description__image")
+                            img(src="/images/image-confetti.jpg" alt="")
+                        p(class="title__name") By Claire Robinson
+                        p(class="li-subtitle") Our invite-only Beta<br>accounts are now live!
+                        p(class="li-features") After a lot of hard work by the whole team, we’re excited to launch our closed beta. It’s easy to request an invite through the site
+        footer(class="main-footer")
+            div(class="footer--contact__links")
+                a(href="/" class="header--brand__footer")
+                    h1 FlexCoin
+                div(class="fimg")
+                    <a href="#" target="_blank"><img src="https://res.cloudinary.com/ros4eva/image/upload/v1566984742/twitter_yvunur.png" alt="Twitter image" width="20" height="20"></a>
+                    img(src="/images/icon-facebook.svg" alt="facebook image" style background-color="red")
+                    a(href="#")
+                        img(src="/images/icon-instagram.svg" alt="instagram image")
+            div(class="navigations")
+                nav(class="main--nav1")
+                    ul(class="main-footer__links")
+                        li(class="main-footer__link")
+                            a(href="#") About Us
+                        li(class="main-footer__link")
+                            a(href="/contact") Contact
+                        li(class="main-footer__link")
+                            a(href="#") Blog
+                nav
+                    ul(class="main-footer__links")
+                        li(class="main-footer__link")
+                            a(href="#") Careers
+                        li(class="main-footer__link")
+                            a(href="#") Support
+                        li(class="main-footer__link")
+                            a(href="#") Privacy Policy
+            div(class="request--links")
+                nav(class="frequest__link")
+                    a(class="request--link " href="#") Request Invite
+                    p © FlexCoin. All Rights Reserved
+
+    script(src="/javascripts/modal.js")
+    

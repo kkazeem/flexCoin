@@ -1,0 +1,63 @@
+doctype html
+
+html 
+    head
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+        <link rel="manifest" href="/images/site.webmanifest">
+        link(rel="stylesheet", href="/stylesheets/transfer.css")
+    body
+        main
+            section.main-div
+                div
+                    <button class="toggle-button">
+                        <span class="toggle-button__bar"></span>
+                        <span class="toggle-button__bar"></span>
+                        <span class="toggle-button__bar"></span>
+                    </button>
+                div(id="leftModal" class="modal")
+                    nav(class="main-nav modal-content")
+                        span(class="closeBtn") &times;
+                    div#profile 
+                        img(src="/images/phone.jpg", alt="")
+                        p #{user.email}
+                        ul(class="main-nav__items")
+                            li(class="main-nav__item")
+                                a(href="/") Home
+                            li(class="main-nav__item")
+                                a(href="/dashboard") Dashboard
+                            li(class="main-nav__item")
+                                a(href="/airtime") Airtime
+                            li(class="main-nav__item")
+                                a(href="/data") Data
+                            li(class="main-nav__item")
+                                a(href="/bitcoin") BitCoin
+                            li(class="main-nav__item")
+                                a(href="/bills") Bills
+                            li(class="main-nav__item")
+                                a(href="/transactions") Transaction
+                            li(class="main-nav__item")
+                                a(href="/transfer") Transfer
+                            li(class="main-nav__item")
+                                a(class="main-nav__itemm" href="/account") Settings
+                    div.logOut 
+                        a(href="/logOut") Log Out 
+            section.form-group
+                form(action="" method="POST") 
+                    div.bank-div
+                        label(for="bank_name") Bank Name: 
+                        input#bank(type="text" name="bank_code" placeholder="Racipient Bank Name" required="true" value=(undefined===transfer ? "" : transfer.bankName)) 
+                    div.accountNum-div
+                        label(for="account_number") Account Number: 
+                        input.accountNum(type="text" maxlength="10" minlength="10" placeholder="Recipient Account Number" name="account_number" required="true" value=(undefined===airtime ? "" : transfer.accountNum)) 
+                    div.accountNum-div
+                        label(for="account_name") Account Name: 
+                        input.accountNum#account_name(type="text" maxlength="70" minlength="3" placeholder="Recipient Account Name" name="account_name" required="true" value=(undefined===airtime ? "" : transfer.account_name)) 
+                    div.amount-div
+                        label(for="amount") Amount: 
+                        input.amount(type="number" name="amount" required="true" placeholder="Amount To Transfer" value=(undefined===airtime ? "" : airtime.amount))
+                    button.transfer-btn(type="submit") Transfer
+                p.transfer-error #{messages.transferError}
+
+            script(src="/javascripts/dashboard.js") 

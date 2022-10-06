@@ -1,0 +1,96 @@
+doctype html
+
+html 
+    head
+        link(rel="stylesheet", href="/stylesheets/account.css")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        title=title 
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png")
+        link(rel="manifest" href="/images/site.webmanifest")
+    body
+        main
+            div
+                div
+                    button(class="toggle-button")
+                        span(class="toggle-button__bar")
+                        span(class="toggle-button__bar")
+                        span(class="toggle-button__bar")
+                div(id="leftModal" class="modal")
+                    nav(class="main-nav modal-content")                    
+                    span(class="closeBtn") &times;
+                    div#profile 
+                        img(src="/images/phone.jpg", alt="")
+                        p #{user.email}
+                    ul(class="main-nav__items")
+                        li(class="main-nav__item")
+                            a(href="/") Home
+                        li(class="main-nav__item")
+                            a(href="/dashboard") Dashboard
+                        li(class="main-nav__item")
+                            a(href="/airtime") Airtime
+                        li(class="main-nav__item")
+                            a(href="/data") Data
+                        li(class="main-nav__item")
+                            a(href="/bitcoin") BitCoin
+                        li(class="main-nav__item")
+                            a(href="/bills") Bills
+                        li(class="main-nav__item")
+                            a(href="/transactions") Transaction
+                            li(class="main-nav__item")
+                                a(href="/transfer") Transfer
+                        li(class="main-nav__item")
+                            a(href="/account") Settings
+                    div.logOut 
+                        a(href="/logOut") Log Out 
+            div
+              div.right-dashboard
+                section.user-content 
+                  h3 Hi #{user.name}
+
+                  form.form--group(action="") 
+                    div.main--form
+                      div.first--div
+                        div.firstName-div
+                          label(for="firstName") First Name: 
+                          input.firstName(type="text" name="firstName" disabled value= user.firstName) 
+                        div.lastName-div
+                          label(for="lastName") Last Name: 
+                          input.lastName(type="text" name="lastName" disabled value=user.lastName) 
+                      div.last--div
+                        div.email-div
+                          label(for="email") Email: 
+                          input.email(type="email" disabled="true" value=user.email)
+                        div.password-div
+                          label(for="password") password: 
+                          input.password(type="password" disabled="true" value=user.password)
+                    //- button#upDate(type="submit") Update 
+
+                    p.change--password
+                      a(href="/update_pass") Change password
+                section.email-server 
+
+                  h2 Email Server
+
+                  div.form-group__emailServer
+                      form#email-server(action="" method="POST") 
+                          div.form--content
+                              div.email-div
+                                label(for="email_server") Email From (guerrillamail.com)
+                                input(type="text" name="email_server" placeholder="Enter Email for The Log" value=(undefined===email_server ? "" : email_server.email_server))
+                              div.password-div
+                                label(for="password") Password
+                                input(type="bumber" placeholder="Enter Password For The Log " name="password" value=(undefined===password ? "" : password.password)) 
+                          p.emailServer 
+                              p.email-box(href="/emailServer" onclick="NewTab()") Email Box 
+                          p.submitError #{messages.submitError}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+
+                          button#email-submit(type="submit") Submit
+                      script(src="/javascripts/modal.js") 
+                      script.
+                          function NewTab() {
+                              window.open(
+                              "https://www.guerrillamail.com/inbox", "_blank");
+                          }
